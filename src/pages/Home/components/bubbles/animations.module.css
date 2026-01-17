@@ -1,0 +1,37 @@
+/* .rise {
+  animation: rise linear infinite;
+  transform: translate3d(
+    calc(var(--path-x) + var(--push-x, 0px)),
+    calc(var(--path-y) + var(--push-y, 0px)),
+    0
+  )
+  scale(var(--scale));
+}
+
+@keyframes rise {
+  0% {
+    --path-x: var(--x0);
+    --path-y: 0px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  40% {
+    --path-x: var(--x1);
+    --path-y: -60vh;
+  }
+
+  70% {
+    --path-x: var(--x2);
+    --path-y: -120vh;
+  }
+
+  100% {
+    --path-x: var(--x3);
+    --path-y: -180vh;
+    opacity: 0;
+  }
+} */

@@ -10,7 +10,7 @@ export function Header() {
   return (
     <header className="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <div className="text-sm font-medium text-red-200">
+        <div className="text-4xl font-extrabold text-white-200">
           Systems Lab
         </div>
 
