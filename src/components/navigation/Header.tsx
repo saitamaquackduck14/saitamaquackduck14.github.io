@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom"
+import { NavItem } from "./NavItem"
 
-const navItems = [
+const NAV_ITEMS = [
   { label: "Home", to: "/" },
   { label: "Experiments", to: "/experiments" },
   { label: "Notes", to: "/notes" },
@@ -8,22 +8,22 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="border-b border-zinc-800">
-      <nav className="max-w-5xl mx-auto px-6 py-4 flex gap-6">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={({ isActive }) =>
-              isActive
-                ? "text-white font-medium"
-                : "text-zinc-400 hover:text-zinc-200"
-            }
-          >
-            {item.label}
-          </NavLink>
-        ))}
-      </nav>
+    <header className="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur">
+      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+        <div className="text-sm font-medium text-red-200">
+          Systems Lab
+        </div>
+
+        <nav className="flex gap-6">
+          {NAV_ITEMS.map((item) => (
+            <NavItem
+              key={item.to}
+              to={item.to}
+              label={item.label}
+            />
+          ))}
+        </nav>
+      </div>
     </header>
   )
 }

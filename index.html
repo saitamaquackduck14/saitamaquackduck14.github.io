@@ -2,12 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>saitamaquackduck14.github.io</title>
+
+    <!-- Basic identity -->
+    <title>Systems Lab</title>
+    <meta name="description" content="A sandbox for experiments in systems, abstractions, and tools." />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme / color -->
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- Favicon (temporary, replace later) -->
+    <link rel="icon" href="/favicon.svg" />
+
+    <!-- Social / sharing (optional but clean) -->
+    <meta property="og:title" content="Systems Lab" />
+    <meta property="og:description" content="Small experiments in systems, abstractions, and tooling." />
+    <meta property="og:type" content="website" />
+
   </head>
-  <body>
+  <body class="bg-zinc-950 text-zinc-100 antialiased">
+    <noscript>
+      This site requires JavaScript to run experiments.
+    </noscript>
+
     <div id="root"></div>
+
+    <!-- Vite entry -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
