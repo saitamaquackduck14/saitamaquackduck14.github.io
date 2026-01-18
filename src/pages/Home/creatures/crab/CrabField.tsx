@@ -9,7 +9,7 @@ type CrabAgent = {
   state: "walking" | "talking"
 }
 
-const MIN_SIZE = 220
+const MIN_SIZE = 20
 const MAX_SIZE = 300
 const MIN_SPACING = 260
 
@@ -19,7 +19,7 @@ export function CrabField({ groundY }: { groundY: number }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCrabs((prev) => {
-        const active = prev.slice(-2)
+        const active = prev.slice(10e-10)
 
         const size =
           MIN_SIZE + Math.random() * (MAX_SIZE - MIN_SIZE)
