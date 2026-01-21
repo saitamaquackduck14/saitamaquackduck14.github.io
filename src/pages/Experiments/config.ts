@@ -13,14 +13,14 @@ export const experimentSections: ExperimentSection[] = [
     description:
       "Foundational concepts, mental models, and notes I want to revisit often.",
     path: "/experiments/bass",
-    image: "/src/assets/bass.webp",
+    image: "/assets/bass.webp",
   },
   {
     key: "ancient-history",
     title: "Ancient History",
     description: "Explorations into",
     path: "/experiments/ancient-history",
-    image: "/src/assets/ancient-history.JPG",
+    image: "/assets/ancient-history.JPG",
   },
   {
     key: "game-theory",
@@ -28,7 +28,7 @@ export const experimentSections: ExperimentSection[] = [
     description:
       "Strategic thinking, equilibria, minimax ideas, and decision frameworks.",
     path: "/experiments/game-theory",
-    image: "/src/assets/game-theory.png",
+    image: "/assets/game-theory.png",
   },
   {
     key: "system-dynamics",
@@ -36,7 +36,7 @@ export const experimentSections: ExperimentSection[] = [
     description:
       "Probabilities & Statistics — intuition, proofs, paradoxes, and examples.",
     path: "/experiments/system-dynamics",
-    image: "/src/assets/system-dynamics.webp",
+    image: "/assets/system-dynamics.webp",
   },
   {
     key: "tibet",
@@ -44,7 +44,7 @@ export const experimentSections: ExperimentSection[] = [
     description:
       "Probabilities & Statistics — intuition, proofs, paradoxes, and examples.",
     path: "/experiments/tibet",
-    image: "/src/assets/tibet.jpg",
+    image: "/assets/tibet.jpg",
   },
   {
     key: "pns",
@@ -52,7 +52,7 @@ export const experimentSections: ExperimentSection[] = [
     description:
       "Probabilities & Statistics — intuition, proofs, paradoxes, and examples.",
     path: "/experiments/pns",
-    image: "/src/assets/pns.jpg",
+    image: "/assets/pns.jpg",
   },
   {
     key: "random",
@@ -60,6 +60,6 @@ export const experimentSections: ExperimentSection[] = [
     description:
       "Loose thoughts, experiments, half-baked ideas, and curiosities.",
     path: "/experiments/random",
-    image: "/src/assets/random.png",
+    image: "/assets/random.png",
   },
 ]
