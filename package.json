@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "resume:build": "node scripts/build-resume.mjs",
+    "prebuild": "npm run resume:build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

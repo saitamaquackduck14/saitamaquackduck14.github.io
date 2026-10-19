@@ -1,0 +1,151 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage{ulem}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\customSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \multicolumn{2}{l}{\textit{\small#3}} \\
+      \multicolumn{2}{l}{\textit{\small#4}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+    \textbf{\Huge \scshape Kaushley Mehra} \\ \vspace{3pt}
+    \small\scshape Technical Product Manager --- Supply Chain \& Optimization Systems \\ \vspace{3pt}
+    \small 91-9899225890 $|$ \href{mailto:kaushley14@gmail.com}{\underline{kaushley14@gmail.com}} $|$ \href{https://www.linkedin.com/in/kaushley-mehra/}{\underline{LinkedIn}}
+\end{center}
+
+%----------SUMMARY----------
+\section{Summary}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{Technical product manager who owns and \textbf{personally builds the decision logic} inside India's largest quick-commerce replenishment system --- storage, reverse logistics, and inventory health across \textbf{2,500+ dark stores}. Ships the optimization and statistical models directly (Python, SQL, linear programming, empirical Bayes) rather than specifying them. Previously employee \#4 at a beverage-commerce startup, building operations, full-stack systems, and a new revenue line from zero.}}
+\end{itemize}
+
+%----------EXPERIENCE----------
+\section{Professional Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {Product Manager -- Replenishment}{August 2024 -- Present}
+    {\href{https://blinkit.com/aboutus}{\uline{Blinkit} (Eternal Company)}}{Gurugram, HR}
+    \vspace{0.5pt}
+    % \item\small\textit{\textsf{India's \#1 quick commerce \textbar\ 2,500+ dark stores \textbar\ 350 cities \textbar\ \textasciitilde INR 5,000 Cr/month GMV \textbar\ network scaled 3.5x in 18 months}}
+
+\resumeItemListStart
+    \resumeItem{Own the \textbf{replenishment decision logic} --- storage-aware allocation, \textbf{reverse stock transfers (RSTOs)}, and inventory health --- within the \textbf{autonomous replenishment system (ARS)} serving 2,500+ dark stores through a 3.5x scale-up.}
+
+    \resumeItem{Diagnosed \textbf{storage constraints as the largest driver of availability loss} (50--64\% of unit drops in peak months; \textbf{INR 160--750 Cr/month} GMV at risk); designed an \textbf{opportunity-cost--based RSTO cost function} closing the missing feedback loop between storage truncation and reverse-transfer creation --- \textbf{+72\% RSTO share at storage-constrained stores} (18\% $\rightarrow$ 31.6\%) and \textbf{--26\% damage-prone RSTO creation}, from single-warehouse pilot to network rollout.}
+
+    \resumeItem{Architected and \textbf{personally coded the translation layer} between digitized on-ground store layouts and ARS, moving storage truncation from static item-tag rules to live \textbf{on-shelf-utilization signals} --- eliminating recurring manual inputs and avoiding a severe system rewrite.}
+
+    \resumeItem{Replaced ad-hoc reverse-transfer clearance with a \textbf{tiered, least-aggressive-first escalation framework} triggered strictly on storage conditions and linked to assortment states, festive modes, and throttleable configuration --- raising \textbf{RSTO automation from \textasciitilde 56\% to 90--95\%} across \textbf{\textasciitilde 30x volume growth} (0.4M $\rightarrow$ 11--13M units/month).}
+
+    \resumeItem{Designed and coded a city-scale \textbf{dead-inventory reclassification engine} (Bengaluru, \textbf{3M+ item-outlet pairs}): exposure-adjusted staleness, per-category p80 cutoffs, velocity-based item immunity, and \textbf{empirical-Bayes item effects} --- replacing blunt legacy dead flags with statistically defensible, category-relative signals.}
+
+    \resumeItem{Contributed to a \textbf{+450 bps store-level availability gain} (p50 74\% $\rightarrow$ 79\%) via the allocation-logic and clearance changes, sustained through \textbf{\textasciitilde 9x peak-demand events} with near-zero manual overrides.}
+\resumeItemListEnd
+
+\vspace{6pt}
+
+\resumeSubheading
+    {Founding Team Member}{June 2022 -- August 2024}
+    {\href{https://sipdirect.com/}{\uline{Sip Direct} (Ontap Direct Private Limited)}}{Bangalore, KT}
+    \vspace{0.5pt}
+    \item\small\textit{\textsf{Beverage commerce platform \textbar\ 4 cities \textbar\ 350+ pincodes \textbar\ 50k+ orders delivered}}
+
+\resumeItemListStart
+    \resumeItem{Joined as \textbf{employee \#4}, before product or operational systems existed --- set up and optimized the \textbf{foundational loops} across operations, technology, finance, and analytics, and stayed the person pulled into urgent, undefined problems.}
+
+    \resumeItem{Built a net-new \textbf{high-margin revenue stream} (Bartending-as-a-Service) from idea to first order --- partner onboarding, tech/product implementation, SOPs --- eventually contributing \textbf{25\% of company earnings}.}
+
+    \resumeItem{Autonomously launched \textbf{Siliguri operations end to end in \textasciitilde 60 days} --- onboarded retailers, delivery partners, and feet-on-ground, localized the GTM --- the company's 2nd operational city, growing to \textbf{\textasciitilde 20\% of company GMV}.}
+
+    \resumeItem{Worked as a \textbf{full-stack developer} on the core engineering team --- \textbf{React/Node, Apollo GraphQL BFF, Prisma ORM, MySQL} in a microservices stack --- wrote the \textbf{first line of code in multiple repos}, building internal operations tooling and the consumer app, while interim-running scrums, roadmap, tech debt, and backlog.}
+
+    \resumeItem{Owned the \textbf{data and reporting stack} --- schemas, dashboards, and data architecture across \textbf{7+ applications} --- and ran the platform's \textbf{first 3 sales-enablement campaigns} for a major alcobev brand.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------EDUCATION----------
+\section{Education}
+\resumeSubHeadingListStart
+    \customSubheading
+        {Birla Institute of Technology and Science, Pilani}
+        {July 2018 -- June 2023}
+        {Bachelor of Engineering in Mechanical Engineering}
+        {Master of Science in Chemistry (dual degree)}
+\resumeSubHeadingListEnd
+
+%----------SKILLS----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Modeling \& Data}{: Python, SQL, Linear Programming (PuLP), Statistical Modeling (Empirical-Bayes Shrinkage), Airflow} \\
+     \textbf{Engineering}{: React, Node.js, Apollo GraphQL, Prisma ORM, MySQL, Microservices} \\
+     \textbf{Domain}{: Demand Forecasting, Inventory Optimization, Reverse Logistics, Storage \& Capacity Planning, Dead-Stock Classification, Data Architecture \& Reporting}
+    }}
+\end{itemize}
+
+\end{document}

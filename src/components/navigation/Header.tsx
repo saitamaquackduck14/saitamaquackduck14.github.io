@@ -4,6 +4,7 @@ const NAV_ITEMS = [
   { label: "Home", to: "/" },
   { label: "Experiments", to: "/experiments" },
   { label: "Notes", to: "/notes" },
+  { label: "About Me", to: "/about-me" },
 ]
 
 export function Header() {
@@ -14,7 +15,7 @@ export function Header() {
           Systems Lab
         </div>
 
-        <nav className="flex gap-4 sm:gap-6">
+        <nav className="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6" aria-label="Main navigation">
           {NAV_ITEMS.map((item) => (
             <NavItem
               key={item.to}

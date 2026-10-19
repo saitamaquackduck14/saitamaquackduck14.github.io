@@ -11,7 +11,7 @@ export function AppLayout({ children }: Props) {
     <div className="h-screen flex flex-col bg-zinc-950 text-zinc-100">
       <Header />
       <div className="relative min-h-0 flex-1">
-        <main className="h-full overflow-y-auto">
+        <main className="h-full overflow-y-auto scroll-pb-64">
           {children}
         </main>
         <BandcampPlayer />

@@ -26,7 +26,7 @@ export const experimentSections: ExperimentSection[] = [
     key: "game-theory",
     title: "Game Theory",
     description:
-      "Strategic thinking, equilibria, minimax ideas, and decision frameworks.",
+      "Brain exercises in dominant strategies, Nash equilibrium, backward induction, and maximin reasoning.",
     path: "/experiments/game-theory",
     image: "/assets/game-theory.png",
   },
