@@ -7,7 +7,7 @@ export function Footer() {
         <time dateTime="2026-10-20">20 October 2026</time>.
         <span className="mx-2 hidden sm:inline" aria-hidden="true">·</span>
         <span className="block sm:inline">
-          With love from your coding agent <span className="text-rose-300">♥</span>
+          With love from your coding agent <span className="text-rose-300">😈</span>
         </span>
       </p>
     </footer>
