@@ -18,7 +18,7 @@ export const experimentSections: ExperimentSection[] = [
   {
     key: "ancient-history",
     title: "Ancient History",
-    description: "Explorations into",
+    description: "Cities, writing, and political power — six milestones and the evidence behind them.",
     path: "/experiments/ancient-history",
     image: "/assets/ancient-history.JPG",
   },
