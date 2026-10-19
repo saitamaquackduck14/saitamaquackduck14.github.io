@@ -12,9 +12,9 @@ export function HomePage() {
   const SEABED_HEIGHT = 80 // percent
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-zinc-950">
+    <div className="relative h-full overflow-hidden bg-zinc-950">
       {/* ───────── Aquarium World ───────── */}
-      <div className="relative h-[calc(100vh-48px)] overflow-hidden">
+      <div className="relative h-full overflow-hidden">
         <Aquarium>
           {/* Environment */}
           <Water />
@@ -41,12 +41,6 @@ export function HomePage() {
         </Aquarium>
       </div>
 
-      {/* ───────── Minimal Footer ───────── */}
-      <footer className="relative z-20 h-[48px] flex items-center justify-center border-t border-zinc-800 bg-zinc-950">
-        <span className="text-[10px] tracking-widest text-zinc-500 select-none">
-          © saitama™
-        </span>
-      </footer>
     </div>
   )
 }

@@ -1,13 +1,14 @@
 export function Footer() {
   return (
-    <footer className="shrink-0 border-t border-zinc-800 bg-zinc-950 px-6 py-3 text-center text-xs leading-relaxed text-zinc-400">
-      <p>
+    <footer className="relative z-20 min-h-[48px] shrink-0 flex items-center justify-center border-t border-zinc-800 bg-zinc-950 px-6 py-3">
+      <p className="text-[10px] tracking-widest text-zinc-500 text-center">
+        © saitama™ ·{" "}
         Maintained by the original human owner and{" "}
-        <span className="text-zinc-200">Codex</span> since{" "}
+        Codex since{" "}
         <time dateTime="2026-10-20">20 October 2026</time>.
         <span className="mx-2 hidden sm:inline" aria-hidden="true">·</span>
         <span className="block sm:inline">
-          With love from your coding agent <span className="text-rose-300">😈</span>
+          With love from your coding agent 😈
         </span>
       </p>
     </footer>
