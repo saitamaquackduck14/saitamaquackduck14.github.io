@@ -1,5 +1,7 @@
-import { motion } from "framer-motion"
+import { useId } from "react"
+import { motion, useReducedMotion } from "framer-motion"
 import { Creature } from "../base/Creature"
+import { bodyPath, swimFrames, tailPath } from "./dynamics"
 import type { FishStyle } from "./types"
 
 type Props = {
@@ -11,8 +13,14 @@ type Props = {
 }
 
 export function Fish({ y, size, speed, delay, style }: Props) {
-  const gradientId = `fish-grad-${style.bodyColor.replace(/[^a-z0-9]/gi, "")}`
-  const scaleId = `fish-scales-${style.bodyColor.replace(/[^a-z0-9]/gi, "")}`
+  const id = useId()
+  const gradientId = `fish-grad-${id}`
+  const scaleId = `fish-scales-${id}`
+  const reducedMotion = useReducedMotion()
+  const body = bodyPath(style)
+  const bodyAnimation = reducedMotion ? undefined : {
+    d: [body, bodyPath(style, style.waveAmplitude * 2), body],
+  }
 
   return (
     <Creature y={y}>
@@ -27,11 +35,17 @@ export function Fish({ y, size, speed, delay, style }: Props) {
         }}
         style={{ width: size * 2 }}
       >
-        <svg
+        <motion.svg
           width={size * 2}
           height={size}
           viewBox="0 0 200 100"
-          style={{ overflow: "visible", transform: "scaleX(-1)" }}
+          style={{ overflow: "visible", scaleX: -1 }}
+          animate={reducedMotion ? undefined : swimFrames(style, delay)}
+          transition={{
+            duration: style.waveLength * (style.swimStyle === "lazy" ? 6 : 4),
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
           <defs>
             {/* BODY GRADIENT */}
@@ -53,14 +67,9 @@ export function Fish({ y, size, speed, delay, style }: Props) {
 
           {/* BODY (animated shape) */}
           <motion.path
-            d="M20,50 C50,10 120,10 160,50 C120,90 50,90 20,50 Z"
+            d={body}
             fill={`url(#${gradientId})`}
-            animate={{
-              d: [
-                "M20,50 C50,12 120,10 160,50 C120,88 50,90 20,50 Z",
-                "M20,50 C50,10 120,12 160,50 C120,90 50,88 20,50 Z",
-              ],
-            }}
+            animate={bodyAnimation}
             transition={{
               duration: 2,
               repeat: Infinity,
@@ -70,8 +79,10 @@ export function Fish({ y, size, speed, delay, style }: Props) {
 
           {/* SCALES */}
           {style.scalePattern !== "none" && (
-            <path
-              d="M20,50 C50,10 120,10 160,50 C120,90 50,90 20,50 Z"
+            <motion.path
+              d={body}
+              animate={bodyAnimation}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               fill={`url(#${scaleId})`}
               opacity={style.scaleDensity}
             />
@@ -88,9 +99,11 @@ export function Fish({ y, size, speed, delay, style }: Props) {
 
           {/* TAIL */}
           <motion.path
-            d="M160,50 L195,25 L195,75 Z"
+            d={tailPath(style)}
             fill={style.accentColor}
-            animate={{ rotate: [0, 20, -20, 0] }}
+            animate={reducedMotion ? undefined : {
+              rotate: [0, 20 / style.tailStiffness, -20 / style.tailStiffness, 0],
+            }}
             style={{
               transformOrigin: "160px 50px",
               transformBox: "fill-box",
@@ -116,7 +129,7 @@ export function Fish({ y, size, speed, delay, style }: Props) {
               ease: "easeInOut",
             }}
           />
-        </svg>
+        </motion.svg>
       </motion.div>
     </Creature>
   )
