@@ -1,10 +1,45 @@
 {
+  "schemaVersion": 2,
   "sourceSha256": "67ed30be2713d9efe645a08279a7b9e8897a112a5429d17d638cf3a1036c0c91",
-  "pdfSha256": "ef306815ab9639dad3bc9435437be1f1c3dc5a318de681f34dedb392210cd6dc",
+  "pdfSha256": "0442576388ac7d2ee88b5f7365e4ec008b7f0f58c19ef9806b5c306f025ae17e",
   "pages": [
     {
       "file": "page-1.png",
-      "sha256": "b8d73e6252eb093d7984922d26fb76ed50b39b117eb3a50ed9d3f81538afd695"
+      "sha256": "b8d73e6252eb093d7984922d26fb76ed50b39b117eb3a50ed9d3f81538afd695",
+      "links": [
+        {
+          "href": "mailto:kaushley14@gmail.com",
+          "label": "kaushley14@gmail.com",
+          "left": 43.35511982570806,
+          "top": 9.764309764309765,
+          "width": 17.10239651416122,
+          "height": 1.0101010101010102
+        },
+        {
+          "href": "https://www.linkedin.com/in/kaushley-mehra/",
+          "label": "LinkedIn",
+          "left": 61.98257080610022,
+          "top": 9.764309764309765,
+          "width": 6.535947712418301,
+          "height": 1.0101010101010102
+        },
+        {
+          "href": "https://blinkit.com/aboutus",
+          "label": "Blinkit (Eternal Company)",
+          "left": 7.625272331154684,
+          "top": 25.5050505050505,
+          "width": 17.647058823529413,
+          "height": 1.0101010101010102
+        },
+        {
+          "href": "https://sipdirect.com/",
+          "label": "Sip Direct (Ontap Direct Private Limited)",
+          "left": 7.625272331154684,
+          "top": 55.72390572390572,
+          "width": 27.66884531590414,
+          "height": 1.0101010101010102
+        }
+      ]
     }
   ],
   "text": "                                        Kaushley Mehra\n                         Technical Product Manager — Supply Chain & Optimization Systems\n                                     91-9899225890 | kaushley14@gmail.com | LinkedIn\n\nSummary\n Technical product manager who owns and personally builds the decision logic inside India’s largest quick-commerce\n replenishment system — storage, reverse logistics, and inventory health across 2,500+ dark stores. Ships the optimization and\n statistical models directly (Python, SQL, linear programming, empirical Bayes) rather than specifying them. Previously employee\n #4 at a beverage-commerce startup, building operations, full-stack systems, and a new revenue line from zero.\n\nProfessional Experience\n Product Manager – Replenishment                                                                       August 2024 – Present\n Blinkit (Eternal Company)                                                                                       Gurugram, HR\n\n   – Own the replenishment decision logic — storage-aware allocation, reverse stock transfers (RSTOs), and inventory\n     health — within the autonomous replenishment system (ARS) serving 2,500+ dark stores through a 3.5x scale-up.\n   – Diagnosed storage constraints as the largest driver of availability loss (50–64% of unit drops in peak months; INR\n     160–750 Cr/month GMV at risk); designed an opportunity-cost–based RSTO cost function closing the missing\n     feedback loop between storage truncation and reverse-transfer creation — +72% RSTO share at storage-constrained\n     stores (18% → 31.6%) and –26% damage-prone RSTO creation, from single-warehouse pilot to network rollout.\n   – Architected and personally coded the translation layer between digitized on-ground store layouts and ARS, moving\n     storage truncation from static item-tag rules to live on-shelf-utilization signals — eliminating recurring manual inputs\n     and avoiding a severe system rewrite.\n   – Replaced ad-hoc reverse-transfer clearance with a tiered, least-aggressive-first escalation framework triggered strictly\n     on storage conditions and linked to assortment states, festive modes, and throttleable configuration — raising RSTO\n     automation from ˜56% to 90–95% across ˜30x volume growth (0.4M → 11–13M units/month).\n   – Designed and coded a city-scale dead-inventory reclassification engine (Bengaluru, 3M+ item-outlet pairs):\n     exposure-adjusted staleness, per-category p80 cutoffs, velocity-based item immunity, and empirical-Bayes item effects —\n     replacing blunt legacy dead flags with statistically defensible, category-relative signals.\n   – Contributed to a +450 bps store-level availability gain (p50 74% → 79%) via the allocation-logic and clearance changes,\n     sustained through ˜9x peak-demand events with near-zero manual overrides.\n\n Founding Team Member                                                                                June 2022 – August 2024\n Sip Direct (Ontap Direct Private Limited)                                                                      Bangalore, KT\n Beverage commerce platform | 4 cities | 350+ pincodes | 50k+ orders delivered\n\n   – Joined as employee #4, before product or operational systems existed — set up and optimized the foundational loops\n     across operations, technology, finance, and analytics, and stayed the person pulled into urgent, undefined problems.\n   – Built a net-new high-margin revenue stream (Bartending-as-a-Service) from idea to first order — partner onboarding,\n     tech/product implementation, SOPs — eventually contributing 25% of company earnings.\n   – Autonomously launched Siliguri operations end to end in ˜60 days — onboarded retailers, delivery partners, and\n     feet-on-ground, localized the GTM — the company’s 2nd operational city, growing to ˜20% of company GMV.\n   – Worked as a full-stack developer on the core engineering team — React/Node, Apollo GraphQL BFF, Prisma\n     ORM, MySQL in a microservices stack — wrote the first line of code in multiple repos, building internal operations\n     tooling and the consumer app, while interim-running scrums, roadmap, tech debt, and backlog.\n   – Owned the data and reporting stack — schemas, dashboards, and data architecture across 7+ applications — and ran\n     the platform’s first 3 sales-enablement campaigns for a major alcobev brand.\n\nEducation\n Birla Institute of Technology and Science, Pilani                                                      July 2018 – June 2023\n Bachelor of Engineering in Mechanical Engineering\n Master of Science in Chemistry (dual degree)\n\nSkills\n Modeling & Data: Python, SQL, Linear Programming (PuLP), Statistical Modeling (Empirical-Bayes Shrinkage), Airflow\n Engineering: React, Node.js, Apollo GraphQL, Prisma ORM, MySQL, Microservices\n Domain: Demand Forecasting, Inventory Optimization, Reverse Logistics, Storage & Capacity Planning, Dead-Stock\n Classification, Data Architecture & Reporting\n\f"

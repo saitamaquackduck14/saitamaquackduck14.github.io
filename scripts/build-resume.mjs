@@ -4,6 +4,7 @@ import { mkdtemp, readFile, writeFile, mkdir, rm, readdir } from "node:fs/promis
 import { tmpdir } from "node:os"
 import { dirname, join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
+import { extractResumeLinks } from "./resume-links.mjs"
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const source = join(root, "resume/resume.tex")
@@ -14,7 +15,7 @@ const sourceSha256 = hash(await readFile(source))
 let current = false
 try {
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"))
-  current = Array.isArray(manifest.pages) && manifest.pages.length > 0 && manifest.sourceSha256 === sourceSha256 &&
+  current = manifest.schemaVersion === 2 && Array.isArray(manifest.pages) && manifest.pages.length > 0 && manifest.sourceSha256 === sourceSha256 &&
     manifest.pdfSha256 === hash(await readFile(join(output, "resume.pdf")))
   for (const page of manifest.pages) {
     if (hash(await readFile(join(output, page.file))) !== page.sha256) current = false
@@ -40,6 +41,7 @@ if (current) {
     const pdfPath = join(temporary, "resume.pdf")
     const pdf = await readFile(pdfPath)
     const text = execFileSync("pdftotext", ["-layout", pdfPath, "-"], { encoding: "utf8", timeout: 30000 })
+    const linkPages = extractResumeLinks(execFileSync("pdftohtml", ["-xml", "-i", "-hidden", "-nomerge", "-stdout", pdfPath], { encoding: "utf8", timeout: 30000 }))
     execFileSync("pdftoppm", ["-scale-to", "2000", "-png", pdfPath, join(temporary, "page")], { timeout: 30000 })
     const pageFiles = (await readdir(temporary)).filter(name => /^page-\d+\.png$/.test(name)).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
     if (pageFiles.length === 0) throw new Error("No resume preview pages were generated.")
@@ -48,10 +50,10 @@ if (current) {
     for (const file of pageFiles) {
       const bytes = await readFile(join(temporary, file))
       await writeFile(join(output, file), bytes)
-      pages.push({ file, sha256: hash(bytes) })
+      pages.push({ file, sha256: hash(bytes), links: linkPages.get(pages.length + 1) ?? [] })
     }
     await writeFile(join(output, "resume.pdf"), pdf)
-    await writeFile(manifestPath, `${JSON.stringify({ sourceSha256, pdfSha256: hash(pdf), pages, text }, null, 2)}\n`)
+    await writeFile(manifestPath, `${JSON.stringify({ schemaVersion: 2, sourceSha256, pdfSha256: hash(pdf), pages, text }, null, 2)}\n`)
     for (const file of await readdir(output)) {
       if (/^page-\d+\.png$/.test(file) && !pageFiles.includes(file)) await rm(join(output, file))
     }
